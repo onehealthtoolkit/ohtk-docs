@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://onehealthtoolkit.org/</loc>
+         <loc>https://onehealthtoolkit.github.io/ohtk-docs/</loc>
          <lastmod>2022-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://onehealthtoolkit.org/about/</loc>
+         <loc>https://onehealthtoolkit.github.io/ohtk-docs/about/</loc>
          <lastmod>2022-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://onehealthtoolkit.org/local-install/</loc>
+         <loc>https://onehealthtoolkit.github.io/ohtk-docs/local-install/</loc>
          <lastmod>2022-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://onehealthtoolkit.org/ohtk-api/</loc>
+         <loc>https://onehealthtoolkit.github.io/ohtk-docs/ohtk-api/</loc>
          <lastmod>2022-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://onehealthtoolkit.org/ohtk-mobile/</loc>
+         <loc>https://onehealthtoolkit.github.io/ohtk-docs/ohtk-mobile/</loc>
          <lastmod>2022-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://onehealthtoolkit.org/ohtk-ms/</loc>
+         <loc>https://onehealthtoolkit.github.io/ohtk-docs/ohtk-ms/</loc>
          <lastmod>2022-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
