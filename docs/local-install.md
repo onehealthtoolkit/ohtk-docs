@@ -4,12 +4,12 @@ These are the instructions for installing OHTK on your local development machine
 
 ## OHTK API
 
-[Install API](/ohtk-api)
+[Install API](/ohtk-docs/ohtk-api)
 
 ## OHTK MS (Management System)
 
-[Install MS](/ohtk-ms)
+[Install MS](/ohtk-docs/ohtk-ms)
 
 ## OHTK Mobile
 
-[Install Mobile App](/ohtk-mobile)
+[Install Mobile App](/ohtk-docs/ohtk-mobile)
