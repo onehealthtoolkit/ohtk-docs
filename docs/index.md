@@ -1,21 +1,12 @@
 # Welcome to OHTK Docs
 
-Welcome to the technical documentation for [onehealthtoolkit.org](https://www.onehealthtoolkit.org).
+Welcome to the technical documentation for the [One Health Toolkit](https://www.onehealthtoolkit.org).
 
-OHTK can be installed locally as a self-hosted project, or it can be hosted via the OHTK Cloud Service. 
+For getting started quickly, try following these instructions: [Quick Start](./quickstart)
 
-## Local Install
+For specific One Health Toolkit packages:
+#### [API (ohtk-api)](./ohtk-api)
 
-[Install OHTK Locally](./local-install)
+#### [Health Management System (ohtk-ms)](./ohtk-ms)
 
-## OHTK Cloud Install
-
-[Setup OHTK Cloud](./cloud-install)
-
-## Quick Start
-
-## API
-
-## Management System
-
-## Mobile App
+#### [Mobile App (ohtk-mobile)](./ohtk-mobile)
