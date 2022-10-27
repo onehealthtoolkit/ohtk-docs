@@ -11,7 +11,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://onehealthtoolkit.github.io/ohtk-docs/local-install/</loc>
+         <loc>https://onehealthtoolkit.github.io/ohtk-docs/api-guide/</loc>
+         <lastmod>2022-10-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://onehealthtoolkit.github.io/ohtk-docs/api-setup/</loc>
+         <lastmod>2022-10-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://onehealthtoolkit.github.io/ohtk-docs/mobile-setup/</loc>
+         <lastmod>2022-10-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://onehealthtoolkit.github.io/ohtk-docs/ms-setup/</loc>
          <lastmod>2022-10-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -27,6 +42,11 @@
     </url>
     <url>
          <loc>https://onehealthtoolkit.github.io/ohtk-docs/ohtk-ms/</loc>
+         <lastmod>2022-10-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://onehealthtoolkit.github.io/ohtk-docs/quickstart/</loc>
          <lastmod>2022-10-27</lastmod>
          <changefreq>daily</changefreq>
     </url>

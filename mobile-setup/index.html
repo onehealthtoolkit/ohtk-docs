@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://onehealthtoolkit.github.io/ohtk-docs/ohtk-mobile/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://onehealthtoolkit.github.io/ohtk-docs/mobile-setup/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>ohtk-mobile - OHTK Docs</title>
+    <title>OHTK Mobile - OHTK Docs</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "ohtk-mobile";
-        var mkdocs_page_input_path = "ohtk-mobile.md";
-        var mkdocs_page_url = "/ohtk-docs/ohtk-mobile/";
+        var mkdocs_page_name = "OHTK Mobile";
+        var mkdocs_page_input_path = "mobile-setup.md";
+        var mkdocs_page_url = "/ohtk-docs/mobile-setup/";
       </script>
     
     <script src="../js/jquery-3.6.0.min.js" defer></script>
@@ -56,14 +56,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../ohtk-ms/">ohtk-ms</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">ohtk-mobile</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#setting-up-ohtk-mobile">Setting up ohtk-mobile</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#using-ohtk-mobile">Using ohtk-mobile</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ohtk-mobile/">ohtk-mobile</a>
                 </li>
               </ul>
       </div>
@@ -80,7 +74,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>ohtk-mobile</li>
+      <li>OHTK Mobile</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -89,16 +83,58 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="ohtk-mobile">OHTK Mobile</h2>
+                <h1 id="ohtk-mobile">OHTK Mobile</h1>
 <p>OHTK mobile application for community and official reporting.</p>
-<h3 id="setting-up-ohtk-mobile"><a href="/ohtk-docs/mobile-setup">Setting up ohtk-mobile</a></h3>
-<h3 id="using-ohtk-mobile"><a href="/ohtk-docs/ms-guide">Using ohtk-mobile</a></h3>
+<h3 id="what-youll-need">What you'll need</h3>
+<ul>
+<li><a href="https://docs.flutter.dev/get-started/install">flutter</a></li>
+<li><a href="https://developer.android.com/studio">android studio</a> or <a href="https://docs.flutter.dev/get-started/install/macos#ios-setup">xcode</a></li>
+</ul>
+<p>If necessary, add the Android emulator to your path
+<code>export PATH=$PATH:~/Library/Android/sdk/emulator/</code></p>
+<h3 id="install">Install</h3>
+<p>Get latest version of ohtk-mobile from github:</p>
+<p><code>git clone https://github.com/onehealthtoolkit/ohtk-mobile.git</code></p>
+<p><code>cd ohtk-mobile</code></p>
+<p>Run flutter build command</p>
+<p><code>flutter pub run build_runner build --delete-conflicting-outputs</code></p>
+<h4 id="change-server-to-test-server">Change server to test server</h4>
+<p>Change settings to </p>
+<p><code>opensur.test</code></p>
+<h4 id="config-android-emulator-to-use-localhost-custom-url-endpoint">Config Android emulator to use localhost custom url endpoint</h4>
+<pre><code class="language-bash"># List all available emulators
+&gt; emulator  --list-avds
+
+# Start emulator in write mode
+# [AVD_NAME] such as Pixel_4_XL_API_25
+&gt; emulator  -writable-system -netdelay none -netspeed full -avd [AVD_NAME]
+
+# Wait until emulator is completely started
+# Login as root
+&gt; adb root
+
+# Remount emulator path /system to writable
+&gt; adb remount
+
+# Upload hosts file to emulator
+&gt; adb push /path/to/hosts /system/etc/
+
+# List active reverse ports
+&gt; adb reverse --list
+
+# Reverse port from localhost server port 8000
+&gt; adb reverse tcp:80 tcp:8000
+
+</code></pre>
+<h3 id="run-mobile-app">Run Mobile App</h3>
+<p>Now you're ready to actually test the app! Open your IDE and run the flutter program:</p>
+<ul>
+<li>ex. Visual Studio Code: Run &gt; Run without Debugging</li>
+</ul>
+<p>Try logging in with one of the users created via the <a href="https://github.com/onehealthtoolkit/ohtk-ms">OHTK Management System</a></p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../ohtk-ms/" class="btn btn-neutral float-left" title="ohtk-ms"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-    </div>
 
   <hr/>
 
@@ -119,8 +155,6 @@
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
-    
-      <span><a href="../ohtk-ms/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>

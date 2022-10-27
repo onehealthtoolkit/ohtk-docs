@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://onehealthtoolkit.github.io/ohtk-docs/ohtk-mobile/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://onehealthtoolkit.github.io/ohtk-docs/ms-setup/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>ohtk-mobile - OHTK Docs</title>
+    <title>OHTK MS (Management System) - OHTK Docs</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "ohtk-mobile";
-        var mkdocs_page_input_path = "ohtk-mobile.md";
-        var mkdocs_page_url = "/ohtk-docs/ohtk-mobile/";
+        var mkdocs_page_name = "OHTK MS (Management System)";
+        var mkdocs_page_input_path = "ms-setup.md";
+        var mkdocs_page_url = "/ohtk-docs/ms-setup/";
       </script>
     
     <script src="../js/jquery-3.6.0.min.js" defer></script>
@@ -56,14 +56,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../ohtk-ms/">ohtk-ms</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">ohtk-mobile</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#setting-up-ohtk-mobile">Setting up ohtk-mobile</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#using-ohtk-mobile">Using ohtk-mobile</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ohtk-mobile/">ohtk-mobile</a>
                 </li>
               </ul>
       </div>
@@ -80,7 +74,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>ohtk-mobile</li>
+      <li>OHTK MS (Management System)</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -89,16 +83,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="ohtk-mobile">OHTK Mobile</h2>
-<p>OHTK mobile application for community and official reporting.</p>
-<h3 id="setting-up-ohtk-mobile"><a href="/ohtk-docs/mobile-setup">Setting up ohtk-mobile</a></h3>
-<h3 id="using-ohtk-mobile"><a href="/ohtk-docs/ms-guide">Using ohtk-mobile</a></h3>
+                <h1 id="ohtk-ms-management-system">OHTK MS (Management System)</h1>
+<h3 id="what-youll-need">What you'll need</h3>
+<ul>
+<li><a href="https://nodejs.org/en/download/">Node.js</a> version 16.14 or above:</li>
+<li>When installing Node.js, you are recommended to check all checkboxes related to dependencies.</li>
+<li>NextJS</li>
+<li>React</li>
+<li><a href="https://www.npmjs.com/package/react-dom">React-DOM</a></li>
+</ul>
+<p><code>npm install next react react-dom</code></p>
+<h4 id="install">Install</h4>
+<p>Get latest version of ohtk-ms from github:</p>
+<p><code>git clone https://github.com/onehealthtoolkit/ohtk-ms.git</code></p>
+<p><code>cd ohtk-ms</code></p>
+<h4 id="start-localhost-server">Start Localhost Server</h4>
+<p><code>npm run dev</code></p>
+<p>Navigate to your local host port 3000:</p>
+<p><a href="http://localhost:3000">http://localhost:3000</a></p>
+<h4 id="create-required-ohtk-data">Create Required OHTK Data</h4>
+<p>You need to create some records in order to use the mobile app – Authorities, Report Categories, Report Types, etc</p>
+<h3 id="next-up-is-installing-the-ohtk-mobile-app">Next up is installing the <a href="/ohtk-docs/ohtk-mobile">OHTK Mobile App</a> &gt;</h3>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../ohtk-ms/" class="btn btn-neutral float-left" title="ohtk-ms"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-    </div>
 
   <hr/>
 
@@ -119,8 +127,6 @@
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
-    
-      <span><a href="../ohtk-ms/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>

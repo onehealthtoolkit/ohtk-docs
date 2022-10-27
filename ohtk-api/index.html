@@ -1,203 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        <link rel="canonical" href="https://onehealthtoolkit.github.io/ohtk-docs/ohtk-api/">
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Ohtk api - OHTK Docs</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
-    </head>
-
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="..">OHTK Docs</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href=".." class="nav-link">Home</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../local-install/" class="nav-link">Quick Start</a>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
-
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://onehealthtoolkit.github.io/ohtk-docs/ohtk-api/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>ohtk-api - OHTK Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="2"><a href="#ohtk-api" class="nav-link">OHTK API</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-        </ul>
-    </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ohtk-api";
+        var mkdocs_page_input_path = "ohtk-api.md";
+        var mkdocs_page_url = "/ohtk-docs/ohtk-api/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
 
-<h2 id="ohtk-api">OHTK API</h2>
-<h3 id="what-youll-need">What you'll need</h3>
-<ul>
-<li>python 3.8 or higher</li>
-<li>pip</li>
-<li><a href="https://laravel.com/docs/9.x/valet">Laravel Valet</a> (if using a proxy over HTTP)</li>
-</ul>
-<h3 id="install">Install</h3>
-<p>Get the latest version of ohtk-api</p>
-<p><code>git clone https://github.com/onehealthtoolkit/ohtk-api.git</code></p>
-<p><code>cd ohtk-api</code></p>
-<p>It is recommended that you install the required packages via a virtual environment (such as <a href="https://docs.python.org/3/library/venv.html">venv</a>): </p>
-<p><code>python -m venv pickavirtualenvname</code></p>
-<p><code>source pickavirtualenvname/bin/activate</code></p>
-<p>Install dependencies</p>
-<p><code>pip install -r requirements.txt</code></p>
-<h3 id="start-a-postgres-server">Start a Postgres Server</h3>
-<p>You can use the <a href="https://postgresapp.com/">Postgres MacOS app</a> for an easy-to-use interface.</p>
-<h3 id="update-database-settings-configsettingspy">Update database settings (config/settings.py)</h3>
-<p><code>DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'database name',
-        'USER': 'username',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}</code></p>
-<h3 id="run-django-managepy-commands">Run Django manage.py commands</h3>
-<p><code>python ./manage.py migrate</code></p>
-<p><code>python ./manage.py createsuperuser</code></p>
-<h3 id="test-data-commands">Test data commands</h3>
-<p><code>./manage.py dumpdata --format=yaml accounts&gt; accounts/fixtures/accounts.yaml</code></p>
-<p><code>./manage.py loaddata --format=yaml accounts</code></p>
-<h3 id="start-local-server">Start Local Server</h3>
-<p><code>python ./manage.py runserver</code></p>
-<p><a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></p>
-<h3 id="start-proxy-using-laravel-valet">Start Proxy (using <a href="https://laravel.com/docs/9.x/valet">Laravel Valet</a>)</h3>
-<p><code>valet proxy opensur http://127.0.0.1:8000 --secure</code></p>
-<p>Navigate to <a href="https://opensur.test/admin/">https://opensur.test/admin/</a> or <a href="http://opensur.test/graphql/">http://opensur.test/graphql/</a></p>
-<p>Remove a proxy using the unproxy command:</p>
-<pre><code>valet unproxy opensur
-</code></pre>
-<h3 id="make-sure-everthing-is-working-with-these-test-commands">Make sure everthing is working with these test commands</h3>
-<pre><code>./manage.py test accounts.tests.test_admin_authority_user_crud.AdminAuthorityUserTests.test_update_with_error
-./manage.py test reports.tests.test_admin_category_crud.AdminCategoryTests.test_simple_query
-./manage.py test cases.tests.test_admin_state_definition_crud.AdminStateDefinitionTests.test_update_with_error
-</code></pre>
-<h3 id="next-up-is-installing-the-ohtk-management-system">Next up is installing the <a href="/ohtk-docs/ohtk-ms">OHTK Management System</a> &gt;</h3></div>
-            </div>
-        </div>
+<body class="wy-body-for-nav" role="document">
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>
-            var base_url = "..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> OHTK Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
 </div>
+      </div>
 
-    </body>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../quickstart/">Getting Started</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">ohtk-api</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-ohtk-api">Setting up ohtk-api</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-ohtk-api">Using ohtk-api</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ohtk-ms/">ohtk-ms</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ohtk-mobile/">ohtk-mobile</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">OHTK Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>ohtk-api</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="ohtk-api">OHTK API</h2>
+<p>Configuring the API is the first step in installing the OHTK system. </p>
+<h3 id="setting-up-ohtk-api"><a href="/ohtk-docs/api-setup">Setting up ohtk-api</a></h3>
+<h3 id="using-ohtk-api"><a href="/ohtk-docs/api-guide">Using ohtk-api</a></h3>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../quickstart/" class="btn btn-neutral float-left" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ohtk-ms/" class="btn btn-neutral float-right" title="ohtk-ms">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../quickstart/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ohtk-ms/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
 </html>
