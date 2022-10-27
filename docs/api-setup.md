@@ -8,19 +8,29 @@
 ### Install
 Get the latest version of ohtk-api
 
-```git clone https://github.com/onehealthtoolkit/ohtk-api.git```
+```
+git clone https://github.com/onehealthtoolkit/ohtk-api.git
+```
 
-```cd ohtk-api```
+```
+cd ohtk-api
+```
 
 It is recommended that you install the required packages via a virtual environment (such as [venv](https://docs.python.org/3/library/venv.html)): 
 
-```python -m venv pickavirtualenvname```
+```
+python -m venv pickavirtualenvname
+```
 
-```source pickavirtualenvname/bin/activate```
+```
+source pickavirtualenvname/bin/activate
+```
 
 Install dependencies
 
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 ### Start a Postgres Server
 You can use the [Postgres MacOS app](https://postgresapp.com/) for an easy-to-use interface.
@@ -39,25 +49,37 @@ You can use the [Postgres MacOS app](https://postgresapp.com/) for an easy-to-us
 
 ### Run Django manage.py commands
 
-```python ./manage.py migrate```
+```
+python ./manage.py migrate
+```
 
-```python ./manage.py createsuperuser```
+```
+python ./manage.py createsuperuser
+```
 
 ### Test data commands
 
-```./manage.py dumpdata --format=yaml accounts> accounts/fixtures/accounts.yaml```
+```
+./manage.py dumpdata --format=yaml accounts> accounts/fixtures/accounts.yaml
+```
 
-```./manage.py loaddata --format=yaml accounts```
+```
+./manage.py loaddata --format=yaml accounts
+```
 
 ### Start Local Server
 
-``` python ./manage.py runserver```
+```
+python ./manage.py runserver
+```
 
 [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ### Start Proxy (using [Laravel Valet](https://laravel.com/docs/9.x/valet))
 
-```valet proxy opensur http://127.0.0.1:8000 --secure```
+```
+valet proxy opensur http://127.0.0.1:8000 --secure
+```
 
 Navigate to [https://opensur.test/admin/](https://opensur.test/admin/) or [http://opensur.test/graphql/](http://opensur.test/graphql/)
 

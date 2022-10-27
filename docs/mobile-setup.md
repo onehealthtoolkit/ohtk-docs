@@ -8,25 +8,35 @@ OHTK mobile application for community and official reporting.
 - [android studio](https://developer.android.com/studio) or [xcode](https://docs.flutter.dev/get-started/install/macos#ios-setup)
 
 If necessary, add the Android emulator to your path
-```export PATH=$PATH:~/Library/Android/sdk/emulator/```
+```bash
+export PATH=$PATH:~/Library/Android/sdk/emulator/
+```
 
 ### Install
 
 Get latest version of ohtk-mobile from github:
 
-```git clone https://github.com/onehealthtoolkit/ohtk-mobile.git```
+```bash
+git clone https://github.com/onehealthtoolkit/ohtk-mobile.git
+```
 
-```cd ohtk-mobile```
+```bash
+cd ohtk-mobile
+```
 
 Run flutter build command
 
-```flutter pub run build_runner build --delete-conflicting-outputs```
+```bash
+flutter pub run build_runner build --delete-conflicting-outputs
+```
 
 #### Change server to test server
 
 Change settings to 
 
-```opensur.test```
+```bash
+opensur.test
+```
 
 #### Config Android emulator to use localhost custom url endpoint
 
