@@ -90,17 +90,22 @@
 <li><a href="https://docs.flutter.dev/get-started/install">flutter</a></li>
 <li><a href="https://developer.android.com/studio">android studio</a> or <a href="https://docs.flutter.dev/get-started/install/macos#ios-setup">xcode</a></li>
 </ul>
-<p>If necessary, add the Android emulator to your path
-<code>export PATH=$PATH:~/Library/Android/sdk/emulator/</code></p>
+<p>If necessary, add the Android emulator to your path</p>
+<pre><code class="language-bash">export PATH=$PATH:~/Library/Android/sdk/emulator/
+</code></pre>
 <h3 id="install">Install</h3>
 <p>Get latest version of ohtk-mobile from github:</p>
-<p><code>git clone https://github.com/onehealthtoolkit/ohtk-mobile.git</code></p>
-<p><code>cd ohtk-mobile</code></p>
+<pre><code class="language-bash">git clone https://github.com/onehealthtoolkit/ohtk-mobile.git
+</code></pre>
+<pre><code class="language-bash">cd ohtk-mobile
+</code></pre>
 <p>Run flutter build command</p>
-<p><code>flutter pub run build_runner build --delete-conflicting-outputs</code></p>
+<pre><code class="language-bash">flutter pub run build_runner build --delete-conflicting-outputs
+</code></pre>
 <h4 id="change-server-to-test-server">Change server to test server</h4>
 <p>Change settings to </p>
-<p><code>opensur.test</code></p>
+<pre><code class="language-bash">opensur.test
+</code></pre>
 <h4 id="config-android-emulator-to-use-localhost-custom-url-endpoint">Config Android emulator to use localhost custom url endpoint</h4>
 <pre><code class="language-bash"># List all available emulators
 &gt; emulator  --list-avds

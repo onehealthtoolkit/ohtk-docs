@@ -92,13 +92,18 @@
 </ul>
 <h3 id="install">Install</h3>
 <p>Get the latest version of ohtk-api</p>
-<p><code>git clone https://github.com/onehealthtoolkit/ohtk-api.git</code></p>
-<p><code>cd ohtk-api</code></p>
+<pre><code>git clone https://github.com/onehealthtoolkit/ohtk-api.git
+</code></pre>
+<pre><code>cd ohtk-api
+</code></pre>
 <p>It is recommended that you install the required packages via a virtual environment (such as <a href="https://docs.python.org/3/library/venv.html">venv</a>): </p>
-<p><code>python -m venv pickavirtualenvname</code></p>
-<p><code>source pickavirtualenvname/bin/activate</code></p>
+<pre><code>python -m venv pickavirtualenvname
+</code></pre>
+<pre><code>source pickavirtualenvname/bin/activate
+</code></pre>
 <p>Install dependencies</p>
-<p><code>pip install -r requirements.txt</code></p>
+<pre><code>pip install -r requirements.txt
+</code></pre>
 <h3 id="start-a-postgres-server">Start a Postgres Server</h3>
 <p>You can use the <a href="https://postgresapp.com/">Postgres MacOS app</a> for an easy-to-use interface.</p>
 <h3 id="update-database-settings-configsettingspy">Update database settings (config/settings.py)</h3>
@@ -113,16 +118,22 @@
     }
 }</code></p>
 <h3 id="run-django-managepy-commands">Run Django manage.py commands</h3>
-<p><code>python ./manage.py migrate</code></p>
-<p><code>python ./manage.py createsuperuser</code></p>
+<pre><code>python ./manage.py migrate
+</code></pre>
+<pre><code>python ./manage.py createsuperuser
+</code></pre>
 <h3 id="test-data-commands">Test data commands</h3>
-<p><code>./manage.py dumpdata --format=yaml accounts&gt; accounts/fixtures/accounts.yaml</code></p>
-<p><code>./manage.py loaddata --format=yaml accounts</code></p>
+<pre><code>./manage.py dumpdata --format=yaml accounts&gt; accounts/fixtures/accounts.yaml
+</code></pre>
+<pre><code>./manage.py loaddata --format=yaml accounts
+</code></pre>
 <h3 id="start-local-server">Start Local Server</h3>
-<p><code>python ./manage.py runserver</code></p>
+<pre><code>python ./manage.py runserver
+</code></pre>
 <p><a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></p>
 <h3 id="start-proxy-using-laravel-valet">Start Proxy (using <a href="https://laravel.com/docs/9.x/valet">Laravel Valet</a>)</h3>
-<p><code>valet proxy opensur http://127.0.0.1:8000 --secure</code></p>
+<pre><code>valet proxy opensur http://127.0.0.1:8000 --secure
+</code></pre>
 <p>Navigate to <a href="https://opensur.test/admin/">https://opensur.test/admin/</a> or <a href="http://opensur.test/graphql/">http://opensur.test/graphql/</a></p>
 <p>Remove a proxy using the unproxy command:</p>
 <pre><code>valet unproxy opensur
