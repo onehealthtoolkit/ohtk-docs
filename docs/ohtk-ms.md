@@ -1,4 +1,4 @@
-# OHTK Management System
+# OHTK MS (Management System)
 
 ### What you'll need
 
@@ -6,24 +6,28 @@
   - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
 - NextJS
 - React
-- React-DOM
+- [React-DOM](https://www.npmjs.com/package/react-dom)
+
+`npm install next react react-dom`
 
 #### Install
 
 Get latest version of ohtk-ms from github:
 
-```git clone https://github.com/onehealthtoolkit/ohtk-ms.git```
+`git clone https://github.com/onehealthtoolkit/ohtk-ms.git`
 
+`cd ohtk-ms`
 
 #### Start Localhost Server
 
-Navigate to your ohtk-ms directory and run this command:
+`npm run dev`
 
-```npm run dev```
+Navigate to your local host port 3000:
 
-Navigate to your local host server i.e.
-```http://localhost:3000```
+[http://localhost:3000](http://localhost:3000)
 
-#### Create Required Data
+#### Create Required OHTK Data
 
 You need to create some records in order to use the mobile app – Authorities, Report Categories, Report Types, etc
+
+### Next up is installing the [OHTK Mobile App](/ohtk-docs/ohtk-mobile) >

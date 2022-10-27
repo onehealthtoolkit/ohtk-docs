@@ -1,6 +1,6 @@
 # Local Install
 
-These are the instructions for installing OHTK on your local development machine. You must install the API first, then the MS, then, and only then, the mobile app. 
+These are the instructions for installing OHTK on your local development machine.
 
 ## OHTK API
 

@@ -1,59 +1,78 @@
-# OHTK API
-The OHTK API controls the mobile app and the management system. 
+## OHTK API
 
 ### What you'll need
-- python 3.8 or greater
+- python 3.8 or higher
 - pip
-- Laravel Valet (if using a proxy over HTTP)
+- [Laravel Valet](https://laravel.com/docs/9.x/valet) (if using a proxy over HTTP)
 
-#### Install
+### Install
 Get the latest version of ohtk-api
 
 ```git clone https://github.com/onehealthtoolkit/ohtk-api.git```
 
-Go to the newly created directory
+```cd ohtk-api```
 
-```cd ~/podd-api```
-
-It is recommend that you install the package requirements via a virtual environment. 
-
-For example:
+It is recommended that you install the required packages via a virtual environment (such as [venv](https://docs.python.org/3/library/venv.html)): 
 
 ```python -m venv pickavirtualenvname```
 
 ```source pickavirtualenvname/bin/activate```
 
-#### Install Requirement Packages
-Install all requirement packages
+Install dependencies
 
 ```pip install -r requirements.txt```
 
-#### Postgres Server and Databases
-Start a Postgres Server
+### Start a Postgres Server
+You can use the [Postgres MacOS app](https://postgresapp.com/) for an easy-to-use interface.
 
-Create a database
+### Update database settings (config/settings.py)
+```DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'database name',
+        'USER': 'username',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}```
 
-Add username/password credentials for a database user
+### Run Django manage.py commands
 
-Use these credentials in settings.py
+```python ./manage.py migrate```
 
-#### Run Manage.py Commands
+```python ./manage.py createsuperuser```
 
-This will do a bunch of stuff
+### Test data commands
 
-```python3 ./manage.py migrate```
+```./manage.py dumpdata --format=yaml accounts> accounts/fixtures/accounts.yaml```
 
-This will create a Django super admin user
+```./manage.py loaddata --format=yaml accounts```
 
-```python3 ./manage.py create superuser```
-
-#### Start Local Servers
-Start OHTK API Local Server
+### Start Local Server
 
 ``` python ./manage.py runserver```
 
-Start Proxy
+[http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+### Start Proxy (using [Laravel Valet](https://laravel.com/docs/9.x/valet))
 
 ```valet proxy opensur http://127.0.0.1:8000 --secure```
 
-Navigate to ```https://opensur.test/admin/```
+Navigate to [https://opensur.test/admin/](https://opensur.test/admin/) or [http://opensur.test/graphql/](http://opensur.test/graphql/)
+
+Remove a proxy using the unproxy command:
+
+```
+valet unproxy opensur
+```
+
+### Make sure everthing is working with these test commands
+
+```
+./manage.py test accounts.tests.test_admin_authority_user_crud.AdminAuthorityUserTests.test_update_with_error
+./manage.py test reports.tests.test_admin_category_crud.AdminCategoryTests.test_simple_query
+./manage.py test cases.tests.test_admin_state_definition_crud.AdminStateDefinitionTests.test_update_with_error
+```
+
+### Next up is installing the [OHTK Management System](/ohtk-docs/ohtk-ms) >

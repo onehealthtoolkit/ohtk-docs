@@ -1,36 +1,68 @@
 # OHTK Mobile
 
+OHTK mobile application for community and official reporting.
+
 ### What you'll need
 
-- flutter
-- android studio
+- [flutter](https://docs.flutter.dev/get-started/install)
+- [android studio](https://developer.android.com/studio) or [xcode](https://docs.flutter.dev/get-started/install/macos#ios-setup)
 
-#### Install
+If necessary, add the Android emulator to your path
+```export PATH=$PATH:~/Library/Android/sdk/emulator/```
+
+### Install
 
 Get latest version of ohtk-mobile from github:
 
 ```git clone https://github.com/onehealthtoolkit/ohtk-mobile.git```
 
+```cd ohtk-mobile```
+
+Run flutter build command
+
+```flutter pub run build_runner build --delete-conflicting-outputs```
 
 #### Change server to test server
+
 Change settings to 
+
 ```opensur.test```
 
-#### Run flutter build command
-```	flutter pub run build_runner build --delete-conflicting-outputs```
+#### Config Android emulator to use localhost custom url endpoint
 
-If necessary, add the Android emulator to your path
-```export PATH=$PATH:~/Library/Android/sdk/emulator/```
+```bash
+# List all available emulators
+> emulator  --list-avds
 
-#### Add Google Maps API Key
-Add your Google Maps API to your local.properties file
+# Start emulator in write mode
+# [AVD_NAME] such as Pixel_4_XL_API_25
+> emulator  -writable-system -netdelay none -netspeed full -avd [AVD_NAME]
 
-#### Start Emulator
-run
+# Wait until emulator is completely started
+# Login as root
+> adb root
 
-```emulator -writable-system -netdelay none -netspeed full -avd Nexus_6```
+# Remount emulator path /system to writable
+> adb remount
 
-Then run your program
-Ex: For VS Studio go Run > Run without Debugging
+# Upload hosts file to emulator
+> adb push /path/to/hosts /system/etc/
 
-Now you just need to login and submit some reports. 
+# List active reverse ports
+> adb reverse --list
+
+# Reverse port from localhost server port 8000
+> adb reverse tcp:80 tcp:8000
+
+```
+
+### Run Mobile App
+
+Now you're ready to actually test the app! Open your IDE and run the flutter program:
+
+- ex. Visual Studio Code: Run > Run without Debugging
+
+Try logging in with one of the users created via the [OHTK Management System](https://github.com/onehealthtoolkit/ohtk-ms)
+
+
+
