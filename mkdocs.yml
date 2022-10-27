@@ -7,3 +7,5 @@ nav:
     - ohtk-ms: 'ohtk-ms.md'
     - ohtk-mobile: 'ohtk-mobile.md'
 theme: readthedocs
+markdown_extensions:
+  - attr_list
