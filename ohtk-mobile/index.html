@@ -59,9 +59,27 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">ohtk-mobile</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#setting-up-ohtk-mobile">Setting up ohtk-mobile</a>
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-ohtk-mobile">Setting up OHTK-Mobile</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#what-youll-need">What you'll need</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#using-ohtk-mobile">Using ohtk-mobile</a>
+    <li class="toctree-l3"><a class="reference internal" href="#install">Install</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#change-server-to-test-server">Change server to test server</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#config-android-emulator-to-use-localhost-custom-url-endpoint">Config Android emulator to use localhost custom url endpoint</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#run-mobile-app">Run Mobile App</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-ohtk-mobile">Using OHTK-Mobile</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#inviting-users">Inviting Users</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#notifications-and-alerts">Notifications and Alerts</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -89,11 +107,69 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="ohtk-mobile">OHTK Mobile</h2>
+                <h1 id="ohtk-mobile">OHTK Mobile</h1>
 <p>OHTK mobile application for community and official reporting.</p>
 <p><img alt="Screenshot" src="../img/mobile/mobile-1.png" style="height:300px;width:150px" /></p>
-<h3 id="setting-up-ohtk-mobile"><a href="/ohtk-docs/mobile-setup">Setting up ohtk-mobile</a></h3>
-<h3 id="using-ohtk-mobile"><a href="/ohtk-docs/ms-guide">Using ohtk-mobile</a></h3>
+<h2 id="setting-up-ohtk-mobile">Setting up OHTK-Mobile</h2>
+<hr />
+<h4 id="what-youll-need">What you'll need</h4>
+<ul>
+<li><a href="https://docs.flutter.dev/get-started/install">flutter</a></li>
+<li><a href="https://developer.android.com/studio">android studio</a> or <a href="https://docs.flutter.dev/get-started/install/macos#ios-setup">xcode</a></li>
+</ul>
+<p>If necessary, add the Android emulator to your path</p>
+<pre><code class="language-bash">export PATH=$PATH:~/Library/Android/sdk/emulator/
+</code></pre>
+<h4 id="install">Install</h4>
+<p>Get latest version of ohtk-mobile from github:</p>
+<pre><code class="language-bash">git clone https://github.com/onehealthtoolkit/ohtk-mobile.git
+</code></pre>
+<pre><code class="language-bash">cd ohtk-mobile
+</code></pre>
+<p>Run flutter build command</p>
+<pre><code class="language-bash">flutter pub run build_runner build --delete-conflicting-outputs
+</code></pre>
+<h4 id="change-server-to-test-server">Change server to test server</h4>
+<p>Change settings to </p>
+<pre><code class="language-bash">opensur.test
+</code></pre>
+<h4 id="config-android-emulator-to-use-localhost-custom-url-endpoint">Config Android emulator to use localhost custom url endpoint</h4>
+<pre><code class="language-bash"># List all available emulators
+&gt; emulator  --list-avds
+
+# Start emulator in write mode
+# [AVD_NAME] such as Pixel_4_XL_API_25
+&gt; emulator  -writable-system -netdelay none -netspeed full -avd [AVD_NAME]
+
+# Wait until emulator is completely started
+# Login as root
+&gt; adb root
+
+# Remount emulator path /system to writable
+&gt; adb remount
+
+# Upload hosts file to emulator
+&gt; adb push /path/to/hosts /system/etc/
+
+# List active reverse ports
+&gt; adb reverse --list
+
+# Reverse port from localhost server port 8000
+&gt; adb reverse tcp:80 tcp:8000
+
+</code></pre>
+<h4 id="run-mobile-app">Run Mobile App</h4>
+<p>Now you're ready to actually test the app! Open your IDE and run the flutter program:</p>
+<ul>
+<li>ex. Visual Studio Code: Run &gt; Run without Debugging</li>
+</ul>
+<p>Try logging in with one of the users created via the Management System.</p>
+<h2 id="using-ohtk-mobile">Using OHTK-Mobile</h2>
+<hr />
+<h4 id="inviting-users">Inviting Users</h4>
+<p>Once the One Health Surveillance Management System is configured correctly, the local authority can begin recruiting and training volunteers for the Reporter App. The authority must create unique Invitation Codes to distribute to volunteers during training meetings, so that the volunteers’ reports are submitted to the correct system. The Reporter App can be downloaded from either the Google Play Store or Apple App Store, and volunteers must simply enter their unique Invitation Code to login to enable them as qualified reporters. Their reports will be automatically directed to the correct country and region according to the Authority’s configuration of OHTK-MS. Once downloaded and the Invitation Code is applied, the Reporter App can be used by volunteers to collect a variety of One Health reports and submit them to OHTK-MS for the local authority to review and escalate to a case for investigation if required. </p>
+<h4 id="notifications-and-alerts">Notifications and Alerts</h4>
+<p>Important notifications are delivered via the Reporter App, such as quarantine instructions for sick animals, follow-up questionnaires for volunteers involved in cases or outbreaks, and reminders for volunteer trainings. The Reports are automatically submitted to OHTK-MS for analysis and review by local authorities, but if they match predefined Case Definitions then they will be automatically escalated to Cases. For example, if after training the volunteer notices that 15 of their pigs are experiencing illness, they would use the Reporter App to create a new Report with observation notes such as photos of the symptomatic pigs, observable symptoms, length of illness, and number of sick animals. If the Case Definition for Swine Flu defines a Case for investigation as more than 10 sick pigs from the same area, then the volunteer’s Report will be automatically escalated to a Case and appropriate local agencies will be notified via SMS or email. </p>
               
             </div>
           </div><footer>
