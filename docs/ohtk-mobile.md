@@ -78,11 +78,6 @@ Now you're ready to actually test the app! Open your IDE and run the flutter pro
 Try logging in with one of the users created via the Management System.
 
 
-## Using OHTK-Mobile
----
+## How To Use OHTK-Mobile
 
-#### Inviting Users
-Once the One Health Surveillance Management System is configured correctly, the local authority can begin recruiting and training volunteers for the Reporter App. The authority must create unique Invitation Codes to distribute to volunteers during training meetings, so that the volunteers’ reports are submitted to the correct system. The Reporter App can be downloaded from either the Google Play Store or Apple App Store, and volunteers must simply enter their unique Invitation Code to login to enable them as qualified reporters. Their reports will be automatically directed to the correct country and region according to the Authority’s configuration of OHTK-MS. Once downloaded and the Invitation Code is applied, the Reporter App can be used by volunteers to collect a variety of One Health reports and submit them to OHTK-MS for the local authority to review and escalate to a case for investigation if required. 
-
-#### Notifications and Alerts
-Important notifications are delivered via the Reporter App, such as quarantine instructions for sick animals, follow-up questionnaires for volunteers involved in cases or outbreaks, and reminders for volunteer trainings. The Reports are automatically submitted to OHTK-MS for analysis and review by local authorities, but if they match predefined Case Definitions then they will be automatically escalated to Cases. For example, if after training the volunteer notices that 15 of their pigs are experiencing illness, they would use the Reporter App to create a new Report with observation notes such as photos of the symptomatic pigs, observable symptoms, length of illness, and number of sick animals. If the Case Definition for Swine Flu defines a Case for investigation as more than 10 sick pigs from the same area, then the volunteer’s Report will be automatically escalated to a Case and appropriate local agencies will be notified via SMS or email. 
+#### [OHTK User Guide](https://docs.google.com/document/d/1Kq7mS5Mlw7qJRNxuzRu_7ozVRcIgLcUCJ-Xf1qy7Uyc/edit#bookmark=id.tf4p116y885h)

@@ -99,10 +99,3 @@ valet unproxy opensur
 ./manage.py test reports.tests.test_admin_category_crud.AdminCategoryTests.test_simple_query
 ./manage.py test cases.tests.test_admin_state_definition_crud.AdminStateDefinitionTests.test_update_with_error
 ```
-
-
-## Using the OHTK API
----
-
-#### Overview
-The API allows users to customize and deploy the multi-tenant architecture controlling the Mobile App and the Manager system
