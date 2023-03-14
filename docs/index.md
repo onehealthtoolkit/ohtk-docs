@@ -1,4 +1,4 @@
-# Welcome to OHTK Docs
+# Welcome to OHTK Docss
 
 Welcome to the technical documentation for the [One Health Toolkit](https://www.onehealthtoolkit.org).
 
