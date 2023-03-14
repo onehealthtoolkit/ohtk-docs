@@ -2,10 +2,8 @@ site_name: OHTK Docs
 site_url: https://onehealthtoolkit.github.io/ohtk-docs/
 nav:
     - Home: 'index.md'
-    - Getting Started: 'quickstart.md'
-    - ohtk-api: 'ohtk-api.md'
-    - ohtk-ms: 'ohtk-ms.md'
-    - ohtk-mobile: 'ohtk-mobile.md'
+    - Technical Docs: 'quickstart.md'
+    - User Guide: 'userguide.md'
 theme: readthedocs
 markdown_extensions:
   - attr_list
